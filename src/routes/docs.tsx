@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 export default function Docs() {
+    useEffect(() => {
+        document.title = 'Docs'
+    }, []);
     return (
         <>
             <div id="docs">
