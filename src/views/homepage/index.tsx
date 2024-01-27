@@ -1,8 +1,12 @@
-export default function Root() {
+import { useEffect } from "react";
+
+export default function Homepage() {
+    useEffect(() => {
+        document.title = 'Homepage';
+    }, []);
     return (
         <>
             <div id="sidebar">
-                <h1>React Router Contacts</h1>
                 <div>
                     <form id="search-form" role="search">
                         <input
@@ -26,15 +30,20 @@ export default function Root() {
                 <nav>
                     <ul>
                         <li>
-                            <a href={`/contacts/1`}>Your Name</a>
+                            <a href={`https://github.com/LNReader/lnreader`}>Github</a>
                         </li>
                         <li>
-                            <a href={`/contacts/2`}>Your Friend</a>
+                            <a href={`/website/docs`}>Docs</a>
+                        </li>
+                        <li>
+                            <a href={`/website/tos`}>Terms of serice</a>
+                        </li>
+                        <li>
+                            <a href={`/website/privacy-policy`}>Privacy Policy</a>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <div id="detail"></div>
         </>
     );
 }
