@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import { Height, Menu as MenuIcon, Search as SearchIcon } from '@mui/icons-material';
+import { Menu as MenuIcon, Search as SearchIcon } from '@mui/icons-material';
 import React, { useState } from 'react';
 import Link from '@mui/material/Link';
 import Sidebar from './Sidebar';
