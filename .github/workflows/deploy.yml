@@ -1,0 +1,26 @@
+name: CD
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    if: github.repository == 'LNReader/website'
+    name: Deploy Website
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Clone Repository (Latest)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install Dependencies
+        run: npm install
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/LNReader/website.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
